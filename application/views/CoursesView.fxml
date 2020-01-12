@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane id="pane" alignment="center" hgap="10" prefHeight="706.0" prefWidth="1215.0" stylesheets="@../Style/Darktheme.css" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.views.CoursesView">
+    <columnConstraints>
+        <ColumnConstraints maxWidth="10.0" minWidth="0.0" prefWidth="0.0" />
+        <ColumnConstraints maxWidth="1227.0" minWidth="1217.0" prefWidth="1227.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <Pane id="pane" prefHeight="706.0" prefWidth="1227.0" stylesheets="@../Style/Darktheme.css" GridPane.columnIndex="1">
+        <MenuBar layoutY="-2.0" prefHeight="33.0" prefWidth="1217.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem id="closeButton1" mnemonicParsing="false" onAction="#closeButtonAction" text="Close" />
+                    </items>
+                </Menu>
+
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Account">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#Logout" text="Logout" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Pane layoutY="64.0" prefHeight="91.0" prefWidth="1217.0" style="-fx-background-color: #404040;">
+            <children>
+                <Label fx:id="home" layoutX="384.0" layoutY="30.0" onMouseClicked="#home" prefHeight="33.0" prefWidth="68.0" text="HOME">
+                    <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                    </cursor>
+                </Label>
+                <Label fx:id="evnt" layoutX="555.0" layoutY="36.0" onMouseClicked="#events" text="EVENTS">
+                    <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                    </cursor>
+                </Label>
+                <Label fx:id="events" layoutX="747.0" layoutY="36.0" onMouseClicked="#about" text="ABOUT">
+                    <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                    </cursor>
+                </Label>
+                <Separator layoutX="493.0" layoutY="18.0" orientation="VERTICAL" prefHeight="56.0" prefWidth="6.0" />
+                <Separator layoutX="682.0" layoutY="19.0" orientation="VERTICAL" prefHeight="56.0" prefWidth="6.0" />
+                <Button fx:id="closeButton" layoutX="1108.0" layoutY="-16.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Close" visible="false" />
+            <Label fx:id="typeUser" layoutX="1029.0" layoutY="37.0" text="Prof :" />
+            <Label fx:id="userName" layoutX="1091.0" layoutY="37.0" prefHeight="21.0" prefWidth="85.0" text="Label" />
+            <ImageView fitHeight="73.0" fitWidth="151.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/logo.png" />
+               </image>
+            </ImageView>
+            </children>
+        </Pane>
+        <Pane fx:id="discoverPane" layoutY="164.0" prefHeight="520.0" prefWidth="1185.0" visible="false">
+            <children>
+                <Label id="text2" fx:id="nCourse" layoutX="358.0" layoutY="83.0" prefHeight="21.0" prefWidth="340.0" stylesheets="@../Style/Darktheme.css" text="COURSE NAME : " />
+                <Label fx:id="nProf" layoutX="358.0" layoutY="153.0" prefHeight="21.0" prefWidth="333.0" text="PROF NAME" />
+                <Separator layoutX="339.0" layoutY="174.0" prefHeight="48.0" prefWidth="461.0" />
+                <DatePicker fx:id="dCourse" layoutX="357.0" layoutY="268.0" prefHeight="41.0" prefWidth="242.0" />
+                <Label fx:id="tCourse" layoutX="358.0" layoutY="222.0" text="TYPE COURSE" />
+                <Button layoutX="362.0" layoutY="348.0" mnemonicParsing="false" onAction="#downloadCourse" prefHeight="56.0" prefWidth="198.0" text="Download" />
+                <Button layoutX="578.0" layoutY="348.0" mnemonicParsing="false" onAction="#reCourseView" prefHeight="56.0" prefWidth="198.0" text="Return" />
+                <Separator layoutX="327.0" layoutY="64.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="23.0" />
+                <Separator layoutX="339.0" layoutY="432.0" prefHeight="12.0" prefWidth="461.0" />
+                <Separator layoutX="796.0" layoutY="65.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="16.0" />
+                <Separator layoutX="339.0" layoutY="54.0" prefHeight="21.0" prefWidth="461.0" />
+                <Separator layoutX="339.0" layoutY="114.0" prefHeight="21.0" prefWidth="461.0" />
+                <ImageView fitHeight="33.0" fitWidth="30.0" layoutX="513.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/download.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane fx:id="CoursePane" layoutX="16.0" layoutY="177.0" prefHeight="208.0" prefWidth="1185.0">
+            <children>
+                <Label id="text1" alignment="TOP_LEFT" layoutX="26.0" layoutY="28.0" prefHeight="33.0" prefWidth="253.0" stylesheets="@../Style/Darktheme.css" text="Welcome to Home page" />
+                <Label fx:id="welcomeText" layoutX="26.0" layoutY="61.0" prefHeight="21.0" prefWidth="467.0" text="Here you'll find latest Courses and Tds and Exams" />
+                <Button layoutX="26.0" fx:id="addButton"  layoutY="98.0" mnemonicParsing="false" onAction="#addcourseevent" prefHeight="48.0" prefWidth="151.0" text="ADD ">
+                    <effect>
+                        <Reflection />
+                    </effect></Button>
+                <GridPane id="text" fx:id="coursesContainer1" layoutX="77.0" layoutY="200.0" prefHeight="90.0" prefWidth="1031.0" stylesheets="@../Style/Darktheme.css">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+                <Pane id="pane1" fx:id="addCoursePane" layoutX="415.0" layoutY="61.0" prefHeight="424.0" prefWidth="352.0" stylesheets="@../Style/Darktheme.css" visible="false">
+                    <children>
+                        <TextField fx:id="courseName" layoutX="24.0" layoutY="28.0" prefHeight="48.0" prefWidth="303.0" promptText="Course name" />
+                        <TextField fx:id="profName" layoutX="24.0" layoutY="91.0" prefHeight="48.0" prefWidth="303.0" promptText="Prof Name" />
+                        <ComboBox fx:id="courseType" layoutX="24.0" layoutY="155.0" prefHeight="41.0" prefWidth="303.0" promptText="Choose Type" />
+                        <DatePicker fx:id="courseDate" layoutX="24.0" layoutY="212.0" prefHeight="48.0" prefWidth="303.0" promptText="Date" />
+                        <Button layoutX="24.0" layoutY="349.0" mnemonicParsing="false" onAction="#DoneClicked" prefHeight="48.0" prefWidth="136.0" text="ADD" />
+                        <Button layoutX="176.0" layoutY="349.0" mnemonicParsing="false" onAction="#closeCoursePane" prefHeight="48.0" prefWidth="151.0" text="Close" />
+                  <Button fx:id="uploadButton" layoutX="24.0" layoutY="274.0" mnemonicParsing="false" onAction="#uploadCourse" prefHeight="41.0" prefWidth="303.0" text="Upload" />
+                    </children>
+                </Pane>
+            </children>
+        </Pane>
+      <ScrollPane fx:id="scrollpaneCourses" layoutX="25.0" layoutY="347.0" prefHeight="337.0" prefWidth="1162.0" stylesheets="@../Style/Darktheme.css">
+         <content>
+            <GridPane fx:id="coursesContainer" prefHeight="90.0" prefWidth="1159.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+    </Pane>
+</GridPane>
