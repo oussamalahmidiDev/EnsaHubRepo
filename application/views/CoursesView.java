@@ -171,7 +171,7 @@ public class CoursesView implements Initializable {
     public void DoneClicked() throws Exception {
         addCoursePane.setVisible(false);
         nameCourse = courseName.getText();
-        nameProf = profName.getText();
+//        nameProf = profName.getText();
         datecourse = courseDate.getValue();
         cType = courseType.getValue();
         Date date = Date.valueOf(datecourse);
@@ -221,7 +221,6 @@ public class CoursesView implements Initializable {
         coursesContainer.setVgap(10);
         coursesContainer.setHgap(10);
 
-        courseType.setItems(list1);
         Label nameC = new Label(d.getName());
         GridPane.setConstraints(nameC, i, j);
 
@@ -315,6 +314,7 @@ public class CoursesView implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        courseType.setItems(list1);
 
         typeUser.setText(Home.getCurrentUser().getType());
         userName.setText(Home.getCurrentUser().getName());
